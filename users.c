@@ -40,6 +40,27 @@ void addUser(User u) {
     }
 }
 
+void displayUsers() {
+
+    // open file for read
+    FILE* fp = fopen("users.txt", "r");
+
+    if (fp == NULL) {
+        perror("fopen");
+        return;
+    }
+
+    rewind(fp);
+
+    // setting up a buffer for fgets()
+    char buff[205];
+
+    while (fgets(buff, sizeof(buff), fp) != NULL) {
+        printf("%s", buff);
+    }
+    fclose(fp);
+}
+
 void deleteUser(int id) {
     // open file for read
     FILE* fp1 = fopen("users.txt", "r");
@@ -61,6 +82,7 @@ void deleteUser(int id) {
     while (fgets(buff, sizeof(buff), fp1) != NULL) {
         if (sscanf(buff, "%d;", &userID) == 1) {
             if (userID != id) {
+                // coping content of odl file to the new one (skipping records to be deleted)
                 fputs(buff, fp2);
             }
         }
