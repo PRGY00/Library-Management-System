@@ -9,6 +9,7 @@ typedef struct {
 } User;
 
 void addUser(User u);
+void displayUsers();
 void deleteUser(int id);
 
 #endif
