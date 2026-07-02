@@ -8,10 +8,6 @@ int main() {
     // Book b1 = {22, "HIJ title", "HIJ author"};
     // Book b2 = {25, "KLM title", "KLM author"};
 
-    // printf("ID: %d\n", b1.id);
-    // printf("Title: %s\n", b1.title);
-    // printf("Author: %s\n", b1.author);
-
     // addBook(b1);
     // addBook(b2);
 
@@ -26,7 +22,8 @@ int main() {
     // addUser(u1);
     // addUser(u2);
 
-    deleteUser(31076);
+    // deleteUser(31076);
+    // displayUsers();
 
     return 0;
 }
